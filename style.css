@@ -1,0 +1,75 @@
+body
+{
+  background: black;
+  color: white;
+  font-family: 'GillSans-Light', 'Gill Sans Light', 'Gill Sans', 'Helvetica', sans-serif;
+  font-weight: lighter;
+}
+
+a:link    { text-decoration: none; color: #80ffff;}
+a:visited { text-decoration: none; color: #80ffff;}
+a:hover   { text-decoration: none; color: #b0ffff;}
+
+h1, h2, h3, h4, h5, h6
+{
+  font-weight: normal;
+  display: inline;
+}
+
+h4
+{
+  font-style: italic;
+}
+
+.hd
+{
+  display: block;
+  font-size: 14pt;
+  font-style: italic;
+}
+
+textarea
+{
+  background: black;
+  border: 1px #a0a0a0 solid;
+  color: white;
+  font-family: monospace;
+}
+
+fieldset
+{
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+label
+{
+  clear: left;
+  display: block;
+  float: left;
+  width: 170px;
+}
+
+#output
+{
+  width: 600px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+#msg
+{
+  font-style: italic;
+}
+
+.outimg
+{
+  border: 5px solid white;
+  padding: 5px;
+}
+
+.tip
+{
+  font-size: 9pt;
+}

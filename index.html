@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" type="text/css" href="style.css" />
+	<title>Millitext Generator</title>
+	<script type="text/javascript" src="millitext.js"></script>
+</head>
+
+<body>
+<div id="main">
+<h2>Millitext Generator</h2><br/>
+<h4>Create really, really small text.</h4>
+<hr/>
+<form onsubmit="create(); return false;">
+Text (multiple lines allowed):<br/>
+<textarea id="text" rows="5" cols="50" tabindex="1"></textarea><br/>
+<fieldset>
+<label for="font">Font:</label>
+<select id="font" name="font" tabindex="2">
+<option value="1">One pixel wide</option>
+<option value="2">Two pixels wide</option>
+</select>
+<br/>
+<label for="center">Center text?</label>
+<input id="center" name="center" type="checkbox" tabindex="3"/>
+<br/>
+<label for="invert">Invert colors?</label>
+<input id="invert" name="invert" type="checkbox" tabindex="4"/>
+<br/>
+<label for="bright">Brightness: (0-63)</label>
+<input id="bright" name="bright" type="text" size="3" maxlength="2" value="63" tabindex="5"/>
+</fieldset>
+<input id="submit" name="submit" type="submit" value="Make Text"/>
+</form>
+<hr/>
+<div id="output">
+<span id="msg">The text will appear in the box below.</span>
+<p><img id="outimg" class="outimg" src="blank.png"/></p>
+<div id="outinfo" style="display: none;"><p class="tip">To read it, use a magnifying glass or zoom in with a digital camera.<br/>
+(Use the "macro" mode if it has one and hold it a few inches from the screen)<br/>
+The text can only be seen on standard LCD (flat-panel) monitors.
+<a href="http://en.wikipedia.org/wiki/Subpixel_rendering" target="_blank">Wikipedia explains why</a>.</p>
+Link to this image: (very long URL)<br/>
+<textarea id="outlink" rows="5" cols="60" wrap="hard" readonly="yes"></textarea>
+</div>
+</div>
+<hr/>
+</div>
+<a id="infolink" href="javascript:toggleInfo();">Explanation <small>&#9660;</small></a>
+<div id="info" style="display:none;">
+<p><span class="hd">What's "millitext"?</span>
+Millitext is (what I believe) the smallest possible representation of readable text on
+a computer monitor. It produces characters that are a couple of millimeters
+in size (hence the "milli") and are nearly invisible to the naked eye.
+Some examples are <a href="http://msarnoff.org/millitext/">here</a>.</p>
+<p><span class="hd">How exactly does it work?</span>
+Each pixel in an LCD monitor is made of three colored strips, red,
+green, and blue. The strips (called subpixels) are small enough that the
+eye blurs them together, combining the colors into a single dot. A
+pixel can appear to have one of millions of colors by using different
+brightness values for the red, green, and blue subpixels. Using the right
+color values, one can exploit this property and treat each subpixel as
+its own unit, packing three columns of dots into one pixel. More information
+about this is <a href="http://msarnoff.org/millitext/">here</a>.</p>
+<p><span class="hd">How do I read such tiny text?</span>
+If you have <i>really</i> good vision, and get close enough to your monitor,
+you <i>may</i> be able to see the separate subpixels and read the text.
+If you don't have a magnifying glass, point a digital camera at your screen.
+To get it to focus properly, set it to "macro" mode, and hold the camera
+a few inches from the screen. Use digital zoom if possible. The thick white
+border around the text will help the camera focus on the subpixel grid.
+If you have a Canon camera (like me), the Digital Macro mode works very well.</p>
+<p><span class="hd">I don't see text, or I see backwards garbage.</span>
+Millitext is only readable on standard LCD (flat-panel) monitors. CRT monitors
+don't use a regular grid of pixels, and some LCD monitors order the subpixels
+a different way. <a href="http://en.wikipedia.org/wiki/Subpixel_rendering">Wikipedia</a>
+explains why in more detail.</p>
+<p><span class="hd">Did you invent this? What algorithm is used to make the text?</span>
+Subpixel rendering has been around for years (most operating systems use it
+for smoothing text), and I'm sure I'm not the first one to encode text/images
+directly into subpixels. I was just thinking about it randomly, and decided
+to do some experiments to see if it was possible. No special algorithm is used to create the text. You can make your own with
+any paint program.</p>
+<hr/>
+</div>
+<div style="text-align: center;">
+Matt Sarnoff - October 23, 2008 - <a href="http://www.msarnoff.org">msarnoff.org</a>
+</div>
+</body>
+</html>
